@@ -74,8 +74,8 @@ hw1_prob2_df = tibble(
   vec_numericx = x,
   vec_numericy = y,
   vec_logical = ifelse(x + y > 0, TRUE, FALSE),
-  vec_numeric = as.numeric(hw1_prob2_df$vec_logical),
-  vec_factor = as.factor(hw1_prob2_df$vec_logical)
+  vec_numeric = as.numeric(vec_logical),
+  vec_factor = as.factor(vec_logical)
 )
 ```
 
@@ -96,7 +96,7 @@ ggplot(hw1_prob2_df, aes(x = vec_numericx, y = vec_numericy, color = vec_numeric
 ```
 
 Here is the third scatterplot that color points using the **factor** variable:
-```{r yx_scatter2}
+```{r yx_scatter3}
 ggplot(hw1_prob2_df, aes(x = vec_numericx, y = vec_numericy, color = vec_factor)) + geom_point()
 ```
 
