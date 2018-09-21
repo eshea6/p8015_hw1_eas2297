@@ -100,5 +100,9 @@ Here is the third scatterplot that color points using the **factor** variable:
 ggplot(hw1_prob2_df, aes(x = vec_numericx, y = vec_numericy, color = vec_factor)) + geom_point()
 ```
 
+For both the scatterplots that use the logical variable and factor variable as the color points, the color points are completely dichotmized. Alternatively, for the scatterplot that uses the numeric variable as the color points, there is a gradient color scale for the color points (although only the 0 and 1 colors are ultimately used in the plot).
+
+As a final step, here is the first graph exported:
+
 
 
