@@ -61,17 +61,24 @@ When you convert a character variable to a factor variable and then a numeric va
 
 ## Problem 2
 
-Below is the code chunk that creates the data frame for Problem 2:
+Below are the code chunks that create the data frame for Problem 2:
+
+```{r var_create2}
+set.seed(12)
+x = rnorm(1000)
+y = rnorm(1000)
+```
 
 ```{r df_create2}
 hw1_prob2_df = tibble(
-  x = rnorm(1000),
-  y = rnorm(1000),
+  vec_numericx = x,
+  vec_numericy = y,
   vec_logical = ifelse(x + y > 0, TRUE, FALSE),
   vec_numeric = as.numeric(hw1_prob2_df$vec_logical),
   vec_factor = as.factor(hw1_prob2_df$vec_logical)
 )
 ```
 
+It is next useful to describe our vector. The dataset is 'r nrow(hw1_prob2_df)' rows and 'r ncol(hw1_prob2_df)' columns; the mean of our x variable is 'r mean(x)' while the median is 'r median(x)'; the proportion of cases for which the logical vector is TRUE is 'r sum(hw1_prob2_df$vec_numeric)/length(hw1_prob2_df$vec_numeric)'.
 
 
