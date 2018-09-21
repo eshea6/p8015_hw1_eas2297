@@ -104,5 +104,6 @@ For both the scatterplots that use the logical variable and factor variable as t
 
 As a final step, here is the first graph exported:
 
-
-
+```{r scatter_export}
+ggsave("hw1_scatter.png", plot = ggplot(hw1_prob2_df, aes(x = vec_numericx, y = vec_numericy, color = vec_logical)) + geom_point() )
+```
