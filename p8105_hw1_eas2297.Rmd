@@ -10,5 +10,25 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Problem 1
+
+Here are two chunks of code that create the described data frame:
+
+```{r var_create}
+set.seed(123)
+x = runif(10, min = 0, max = 5)
+```
+
+```{r df_create}
+hw1_prob1_df = tibble(
+  vec_numeric = x,
+  vec_logical = c(FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE),
+  vec_char = c("You", "miss", "one-hundred", "percent", "of", "the", "shots", "you", "don't", "take"),
+  vec_factor = factor(c("yes", "no", "no", "yes", "no", "yes", "yes", "no", "no", "yes"))
+)
+```
+
+
+
 
 
