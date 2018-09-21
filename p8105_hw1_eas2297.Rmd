@@ -31,29 +31,23 @@ hw1_prob1_df = tibble(
 Next is a code chunk that tries to take the mean of the variables in the dataframe:
 
 ```{r means}
-mean(x)
-mean(FALSE)
-mean(TRUE)
-mean("You")
-mean("miss")
-mean("yes")
-mean("no")
+mean(hw1_prob1_df$vec_numeric)
+mean(hw1_prob1_df$vec_logical)
+mean(hw1_prob1_df$vec_char)
+mean(hw1_prob1_df$vec_factor)
 ```
 
-Taking the mean of **numeric** and **logical** variables *works*, while taking the mean of character and factor variable does not. This is because numeric and logical variables have a number assigned to them (in the case of FALSE and TRUE this is 0 and 1 respectively), while character and factor variables do not have assigned number values to summarize in a statistic like the mean.
+Taking the mean of **numeric** and **logical** variables *works*, while taking the mean of character and factor variable does not. This is because numeric and logical variables have a number assigned to them (in the case of FALSE and TRUE this is 0 and 1 respectively), while character and factor variables do not have assigned number values to summarize through a statistic like the mean.
 
 But we can try to convert variables from one type to another, as in the below code chunk:
 
 ```{r num_convert, eval=FALSE}
-as.numeric(FALSE)
-as.numeric(TRUE)
-as.numeric("You")
-as.numeric("miss")
-as.numeric("yes")
-as.numeric("no")
+as.numeric(hw1_prob1_df$vec_logical)
+as.numeric(hw1_prob1_df$vec_char)
+as.numeric(hw1_prob1_df$vec_factor)
 ```
 
-When we apply the as.numeric function to the logical variables they are still numerically represented by 0 and 1; when we apply the as.numeric funcrtion to the character and factor variables, however, they get assigned as NA (not available, i.e. missing values).
+When we apply the as.numeric function to the logical variables they are numerically represented by 0 (for FALSE) and 1 (for TRUE); when we apply the as.numeric function to the factor variables they are then numerically represented by 1 (no) and 2 (yes). However, the character variables, even when the as.numeric function is applied, are all assigned NA (not available, i.e. missing values).
 
 Here is a second and third code chunk demonstrating conversion between variable type:
 
@@ -62,10 +56,9 @@ as.factor("You")
 as.numeric(levels("You"))
 ```
 
-```{r third convert}
+```{r third_convert}
 as.character("yes")
 as.numeric("yes")
 ```
-
 
 
