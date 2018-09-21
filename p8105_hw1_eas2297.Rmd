@@ -28,6 +28,22 @@ hw1_prob1_df = tibble(
 )
 ```
 
+```{r means}
+mean(x)
+mean(FALSE)
+mean(TRUE)
+mean("You")
+mean("miss")
+mean("yes")
+mean("no")
+```
+
+Taking the mean of **numeric** and **logical** variables *works*, while taking the mean of character and factor variable does not. This is because numeric and logical variables have a number assigned to them (in the case of FALSE and TRUE this is 0 and 1 respectively), while character and factor variables do not have assigned number values to summarize in a statistic like the mean.
+
+
+
+
+
 
 
 
