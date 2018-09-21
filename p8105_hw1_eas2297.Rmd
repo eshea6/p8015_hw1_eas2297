@@ -28,7 +28,7 @@ hw1_prob1_df = tibble(
 )
 ```
 
-Next is a code chunk that tries to take the mean of the variables in the dataframe:
+Next is a code chunk that tries to take the mean of the variables in the data frame:
 
 ```{r means}
 mean(hw1_prob1_df$vec_numeric)
@@ -37,7 +37,7 @@ mean(hw1_prob1_df$vec_char)
 mean(hw1_prob1_df$vec_factor)
 ```
 
-Taking the mean of **numeric** and **logical** variables *works*, while taking the mean of character and factor variable does not. This is because numeric and logical variables have a number assigned to them (in the case of FALSE and TRUE this is 0 and 1 respectively), while character and factor variables do not have assigned number values to summarize through a statistic like the mean.
+Taking the mean of **numeric** and **logical** variables *works*, while taking the mean of character and factor variables does not. This is because numeric and logical variables have a number assigned to them (in the case of FALSE and TRUE this is 0 and 1 respectively), while character and factor variables do not have assigned number values to summarize through a statistic like the mean.
 
 But we can try to convert variables from one type to another, as in the below code chunk:
 
@@ -60,4 +60,18 @@ When you convert a character variable to a factor variable and then a numeric va
 
 
 ## Problem 2
+
+Below is the code chunk that creates the data frame for Problem 2:
+
+```{r df_create2}
+hw1_prob2_df = tibble(
+  x = rnorm(1000),
+  y = rnorm(1000),
+  vec_logical = ifelse(x + y > 0, TRUE, FALSE),
+  vec_numeric = as.numeric(hw1_prob2_df$vec_logical),
+  vec_factor = as.factor(hw1_prob2_df$vec_logical)
+)
+```
+
+
 
