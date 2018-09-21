@@ -53,14 +53,19 @@ as.numeric("yes")
 as.numeric("no")
 ```
 
+When we apply the as.numeric function to the logical variables they are still numerically represented by 0 and 1; when we apply the as.numeric funcrtion to the character and factor variables, however, they get assigned as NA (not available, i.e. missing values).
 
+Here is a second and third code chunk demonstrating conversion between variable type:
 
+```{r second_convert}
+as.factor("You")
+as.numeric(levels("You"))
+```
 
-
-
-
-
-
+```{r third convert}
+as.character("yes")
+as.numeric("yes")
+```
 
 
 
